@@ -124,6 +124,9 @@ const (
 	// ComponentDynamoDB represents dynamodb clients
 	ComponentDynamoDB = "dynamodb"
 
+	// Component pluggable authentication module (PAM)
+	ComponentPAM = "pam"
+
 	// DebugEnvVar tells tests to use verbose debug output
 	DebugEnvVar = "DEBUG"
 

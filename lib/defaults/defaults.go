@@ -23,6 +23,7 @@ import (
 	"time"
 
 	"github.com/gravitational/teleport/lib/limiter"
+	"github.com/gravitational/teleport/lib/pam"
 	"github.com/gravitational/teleport/lib/utils"
 )
 
@@ -308,6 +309,19 @@ var (
 	// CACertFile is the default name of the certificate authority file to watch
 	CACertFile = "ca.cert"
 )
+
+const (
+	// ServiceName is the default PAM policy to use if one is not passed in
+	// configuration.
+	ServiceName = "sshd"
+)
+
+// PAMConfig returns the default PAM configuration for Teleport.
+func PAMConfig() *pam.Config {
+	return &pam.Config{
+		Enabled: false,
+	}
+}
 
 const (
 	initError = "failure initializing default values"
